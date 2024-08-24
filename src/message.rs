@@ -4,12 +4,12 @@ use std::time::{Duration, SystemTime};
 /// The message is what is sent to the delayed queue, we'll change this behave like a message sent on AMQP.
 /// for now a message is recieved with delay-time, and will send it after this delay
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Message {
-    topic: String,
+    pub topic: String,
     data: Vec<u8>,
-    insert_time: SystemTime,
-    delay: Duration,
+    pub insert_time: SystemTime,
+    pub delay: Duration,
 }
 
 impl Message {

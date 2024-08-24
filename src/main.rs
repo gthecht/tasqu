@@ -1,3 +1,4 @@
+mod broker;
 mod message;
 use message::Message;
 use std::time::Duration;
